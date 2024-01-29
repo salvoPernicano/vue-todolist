@@ -21,6 +21,9 @@
       }
     },
     methods : {
+      deleteTask : function(index){
+        this.taskArray.splice(index,1);
+      },
       doneTask : function(index){
        this.taskArray[index].done ? this.taskArray[index].done = false : this.taskArray[index].done = true; 
         console.log(this.taskArray[index].done);
