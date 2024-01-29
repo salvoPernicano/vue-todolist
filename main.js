@@ -16,7 +16,23 @@
                 taskText : "fare le pulizie",
                 done : false
             }
-        ]
+        ],
+        newTaskObj : '',
+      }
+    },
+    methods : {
+      doneTask : function(index){
+       this.taskArray[index].done ? this.taskArray[index].done = false : this.taskArray[index].done = true; 
+        console.log(this.taskArray[index].done);
+      },
+      addTask : function(){
+        let newElement = {
+          taskText : this.newTaskObj,
+          done : false
+        };
+        this.taskArray.push(newElement);
+        this.newTaskObj = '';
+        console.log(this.taskArray)
       }
     }
   }).mount('#app')
